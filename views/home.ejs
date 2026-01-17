@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1 {
+            color: #007BFF;
+        }
+        form {
+            margin-top: 20px;
+        }
+        input {
+            padding: 8px;
+            width: 250px;
+        }
+        button {
+            padding: 8px 15px;
+            background: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>URL Shortener</h1>
+
+    <% if (id) { %>
+        <h2>Your Shortened URL:</h2>
+        <a href="/<%= id %>">http://localhost:8001/<%= id %></a>
+    <% } %>
+
+    <div>
+        <form method="POST" action="/url">
+            <label>Enter your Original URL</label><br><br>
+            <input 
+                type="text"
+                name="url"
+                placeholder="http://example.com"
+                required
+            />
+            <button type="submit">Generate</button>
+        </form>
+    </div>
+</body>
+</html>

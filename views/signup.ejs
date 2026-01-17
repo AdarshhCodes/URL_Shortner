@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #141e30, #243b55);
+    }
+
+    .signup-box {
+      background: #fff;
+      padding: 40px;
+      border-radius: 15px;
+      width: 380px;
+      box-shadow: 0 15px 25px rgba(0,0,0,0.5);
+      transform: perspective(1000px) rotateY(-10deg);
+      transition: all 0.5s ease;
+      text-align: center;
+    }
+
+    .signup-box:hover {
+      transform: perspective(1000px) rotateY(0deg) scale(1.05);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.6);
+    }
+
+    .signup-box h1 {
+      margin-bottom: 25px;
+      color: #28a745;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.2);
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-weight: bold;
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 15px;
+      box-shadow: inset 3px 3px 6px #ccc, inset -3px -3px 6px #fff;
+      font-size: 14px;
+      outline: none;
+    }
+
+    input:focus {
+      box-shadow: inset 2px 2px 5px #aaa, inset -2px -2px 5px #fff;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(145deg, #43e97b, #38f9d7);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 6px #1f9d5c;
+      transition: all 0.2s ease;
+    }
+
+    button:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px #1f9d5c;
+    }
+  </style>
+</head>
+<body>
+  <div class="signup-box">
+    <h1>Sign Up</h1>
+    <form method="POST" action="/user">
+      <label for="username">Full Name:</label>
+      <input type="text" id="username" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Sign Up</button>
+    </form>
+  </div>
+</body>
+</html>
